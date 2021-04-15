@@ -11,6 +11,8 @@ import utils.AppUtils;
 
 public class Employee extends AppUtils{
 
+	String empid;
+	
 	public void addEmp(String fname,String lname,String photo) throws InterruptedException {
 		
 		Actions act = new Actions(driver);
@@ -22,6 +24,9 @@ public class Employee extends AppUtils{
 		driver.findElement(By.id("menu_pim_addEmployee")).click();
 		driver.findElement(By.id("firstName")).sendKeys(fname);
 		driver.findElement(By.id("lastName")).sendKeys(lname);
+		
+		empid = driver.findElement(By.id("employeeId")).getAttribute("value");
+		
 		driver.findElement(By.id("photofile")).sendKeys(photo);
 		driver.findElement(By.id("btnSave")).click();
 		
@@ -83,7 +88,7 @@ public class Employee extends AppUtils{
 		driver.findElement(By.xpath("//form/fieldset/p/input")).click();
 	}
 	
-	public void searchemp(String ename) throws InterruptedException {
+	public boolean searchemp() throws InterruptedException {
 		
 		
 		Actions act = new Actions(driver);
@@ -93,8 +98,22 @@ public class Employee extends AppUtils{
 		
 		driver.findElement(By.id("menu_pim_viewEmployeeList")).click();
 		//driver.findElement(By.id("empsearch_employee_name_empName")).sendKeys(ename);
-		driver.findElement(By.id("empsearch_id")).sendKeys(ename);
+		driver.findElement(By.id("empsearch_id")).sendKeys(empid);
 		driver.findElement(By.id("searchBtn")).click();	
+		
+		WebElement resultstable=driver.findElement(By.id("resultTable"));
+		List<WebElement> rows=resultstable.findElements(By.tagName("tr"));
+		List<WebElement> cols=rows.get(1).findElements(By.tagName("td"));
+		String tableempid=cols.get(1).getText();
+		
+		if(tableempid.equals(empid))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 		
 	}
 	
