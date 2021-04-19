@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="31" started-at="2021-04-19T13:53:47Z" finished-at="2021-04-19T13:53:47Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="31" started-at="2021-04-19T13:53:47Z" finished-at="2021-04-19T13:53:47Z">
+      <class name="demos.Gmail_Before_After_Suite">
+        <test-method status="PASS" signature="invokeBrowser()[pri:0, instance:demos.Gmail_Before_After_Suite@1efbd816]" name="invokeBrowser" is-config="true" duration-ms="16" started-at="2021-04-19T19:23:47Z" finished-at="2021-04-19T19:23:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invokeBrowser -->
+        <test-method status="PASS" signature="launchGmail()[pri:0, instance:demos.Gmail_Before_After_Suite@1efbd816]" name="launchGmail" is-config="true" duration-ms="0" started-at="2021-04-19T19:23:47Z" finished-at="2021-04-19T19:23:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchGmail -->
+        <test-method status="PASS" signature="loginGmail()[pri:0, instance:demos.Gmail_Before_After_Suite@1efbd816]" name="loginGmail" is-config="true" duration-ms="0" started-at="2021-04-19T19:23:47Z" finished-at="2021-04-19T19:23:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginGmail -->
+        <test-method status="PASS" signature="receiveMail()[pri:0, instance:demos.Gmail_Before_After_Suite@1efbd816]" name="receiveMail" duration-ms="0" started-at="2021-04-19T19:23:47Z" finished-at="2021-04-19T19:23:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- receiveMail -->
+        <test-method status="PASS" signature="sendMail()[pri:0, instance:demos.Gmail_Before_After_Suite@1efbd816]" name="sendMail" duration-ms="0" started-at="2021-04-19T19:23:47Z" finished-at="2021-04-19T19:23:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendMail -->
+        <test-method status="PASS" signature="logoutGmail()[pri:0, instance:demos.Gmail_Before_After_Suite@1efbd816]" name="logoutGmail" is-config="true" duration-ms="0" started-at="2021-04-19T19:23:47Z" finished-at="2021-04-19T19:23:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutGmail -->
+        <test-method status="PASS" signature="logoutGmail()[pri:0, instance:demos.Gmail_Before_After_Suite@1efbd816]" name="logoutGmail" is-config="true" duration-ms="0" started-at="2021-04-19T19:23:47Z" finished-at="2021-04-19T19:23:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutGmail -->
+        <test-method status="PASS" signature="loginGmail()[pri:0, instance:demos.Gmail_Before_After_Suite@1efbd816]" name="loginGmail" is-config="true" duration-ms="0" started-at="2021-04-19T19:23:47Z" finished-at="2021-04-19T19:23:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginGmail -->
+        <test-method status="PASS" signature="closeGmail()[pri:0, instance:demos.Gmail_Before_After_Suite@1efbd816]" name="closeGmail" is-config="true" duration-ms="0" started-at="2021-04-19T19:23:47Z" finished-at="2021-04-19T19:23:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeGmail -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:demos.Gmail_Before_After_Suite@1efbd816]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2021-04-19T19:23:47Z" finished-at="2021-04-19T19:23:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- demos.Gmail_Before_After_Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
