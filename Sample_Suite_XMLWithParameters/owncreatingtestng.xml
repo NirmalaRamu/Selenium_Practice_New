@@ -1,0 +1,33 @@
+<suite name="Gmail Suite">
+	<test name="Gmail Send TestCase">
+		<classes>
+			<class name="gmail.demo.ReceiveMailTest"></class>
+		</classes>
+	</test>
+	<test name="Gmail Receive TestCase">
+	<parameter name="toemailid" value="ramumattapalli@gmail.com"></parameter>
+	<parameter name="subject" value="I am learning Selenium"/>
+	<parameter name="message" value="In 11:30Am batch"/>
+		<classes>
+			<class name="gmail.demo.SendMailTest"></class>
+		</classes>
+	</test>
+</suite>
+<!-- 
+	o/p:[TestNGContentHandler] [WARN] It is strongly recommended to add "<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >" at the top of your file, otherwise TestNG may fail or not work as expected.
+		Launch gmail app
+		Gmail login
+		Receive mail test
+		Gmail logout
+		Gmail login
+		An email send to :ramumattapalli@gmail.com
+		With subject as :I am learning Selenium
+		With message :In 11:30Am batch
+		Gmail logout
+		Close gmail app
+		
+		===============================================
+		Gmail Suite
+		Total tests run: 2, Failures: 0, Skips: 0
+		===============================================
+ -->
