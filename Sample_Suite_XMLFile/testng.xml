@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Gmail Suite">
+  <test name="Gmail TestCase">
+    <classes>
+      <class name="gmail.demo.SendMailTest"/>
+      <class name="gmail.demo.ReceiveMailTest"/>
+    </classes>
+  </test> <!-- Gmail TestCase -->
+</suite> <!-- Gmail Suite -->
+<!-- 
+	o/p:Launch gmail app
+		Gmail login
+		Send mail test
+		Receive mail test
+		Gmail logout
+		Close gmail app
+		
+		===============================================
+		Gmail Suite
+		Total tests run: 2, Failures: 0, Skips: 0
+		===============================================
+ -->
