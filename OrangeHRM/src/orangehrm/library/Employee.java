@@ -11,7 +11,7 @@ import utils.AppUtils;
 
 public class Employee extends AppUtils{
 
-	String empid;
+	public String empid,empfname,emplname,empfullname,emppassword;
 	
 	public void addEmp(String fname,String lname,String photo) throws InterruptedException {
 		
@@ -37,11 +37,22 @@ public class Employee extends AppUtils{
 		driver.findElement(By.id("btnSave")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.id("personal_txtEmpFirstName")).clear();
-		driver.findElement(By.id("personal_txtEmpFirstName")).sendKeys(fname);
-		driver.findElement(By.id("personal_txtEmpLastName")).clear();
-		driver.findElement(By.id("personal_txtEmpLastName")).sendKeys(lname);
-		driver.findElement(By.id("personal_txtLicExpDate")).click();
 		
+		driver.findElement(By.id("personal_txtEmpFirstName")).sendKeys(fname);
+		driver.findElement(By.id("personal_txtEmpFirstName")).getAttribute(fname);
+		empfname = driver.findElement(By.id("personal_txtEmpFirstName")).getAttribute("value");
+		
+		driver.findElement(By.id("personal_txtEmpLastName")).clear();
+		driver.findElement(By.id("personal_txtEmpLastName")).getAttribute(lname);
+		emplname = driver.findElement(By.id("personal_txtEmpLastName")).getAttribute("value");
+		
+		driver.findElement(By.id("personal_txtEmpLastName")).sendKeys(lname);
+		emplname = driver.findElement(By.id("personal_txtEmpLastName")).getAttribute("value");
+		driver.findElement(By.id("personal_txtLicExpDate")).click();
+		//System.out.println(empfname);
+		//System.out.println(emplname);
+		empfullname = empfname+" "+emplname;
+		//System.out.println(empfullname);
 		// Code for License Expiry date
 		Select monthlist,yearlist;
 		
@@ -88,9 +99,46 @@ public class Employee extends AppUtils{
 		driver.findElement(By.xpath("//form/fieldset/p/input")).click();
 	}
 	
-	public boolean searchemp() throws InterruptedException {
+	public void adminCreateUser(String password,String conformpassword) throws InterruptedException
+	{
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(By.id("menu_admin_viewAdminModule"))).build().perform();
+		Thread.sleep(2000);
+		act.moveToElement(driver.findElement(By.id("menu_admin_UserManagement"))).build().perform();
 		
+		driver.findElement(By.id("menu_admin_viewSystemUsers")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("btnAdd")).click();
+		Thread.sleep(2000);
 		
+		driver.findElement(By.id("systemUser_employeeName_empName")).sendKeys(empfullname);
+		WebElement dropdown = driver.findElement(By.className("ac_results"));
+		dropdown.click();
+		
+		Thread.sleep(2000);
+		driver.findElement(By.id("systemUser_userName")).sendKeys(empfname);
+		driver.findElement(By.id("systemUser_password")).sendKeys(password);
+		emppassword = driver.findElement(By.id("systemUser_password")).getAttribute("value");
+		driver.findElement(By.id("systemUser_confirmPassword")).sendKeys(conformpassword);
+		Thread.sleep(2000);
+		driver.findElement(By.id("btnSave")).click();
+	}
+	
+	public void emplogin()
+	{
+		driver.findElement(By.id("txtUsername")).sendKeys(empfname);
+		driver.findElement(By.id("txtPassword")).sendKeys(emppassword);
+		driver.findElement(By.id("btnLogin")).click();
+	}
+	
+	public void emplogout()
+	{
+		driver.findElement(By.id("welcome")).click();
+		driver.findElement(By.linkText("Logout")).click();
+	}
+	
+	public boolean searchemp() throws InterruptedException 
+	{
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(By.linkText("PIM"))).build().perform();
 		

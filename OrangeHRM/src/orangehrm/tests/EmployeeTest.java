@@ -15,14 +15,20 @@ public class EmployeeTest extends AppUtils{
 		
 		Employee emp = new Employee();
 		emp.addEmp("Qedge", "Suresh Babu", "G:\\Kids\\0.jpg");
-		
 		Thread.sleep(2000);
-		
 		emp.editemp("Nirmala", "Mattapalli", "28", "May", "1978", "Female", "Married");
-		
+		Thread.sleep(2000);
+		emp.adminCreateUser("Qedge123!@#", "Qedge123!@#");
 		Thread.sleep(2000);
 		
-		boolean res = emp.searchemp();
+		login.adminLogout();
+		
+		Thread.sleep(2000);
+		emp.emplogin();
+		Thread.sleep(2000);
+		emp.emplogout();
+		
+		/*boolean res = emp.searchemp();
 		if(res)
 		{
 			System.out.println("employee test case passs ");
@@ -39,7 +45,7 @@ public class EmployeeTest extends AppUtils{
 		//login.adminLogout();
 		
 		//closeApp();
-		
+*/		
 	}
 
 }
