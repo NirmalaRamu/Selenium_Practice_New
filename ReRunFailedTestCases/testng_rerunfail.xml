@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SeleniumTestNG suite">
+	<listeners>
+		<listener class-name="retryFailTest.RetryTransformListener" />
+	</listeners>
+
+	<test name="listeners">
+		<classes>
+			<class name="retryFailTest.TestClass">
+
+			</class>
+		</classes>
+	</test>
+
+</suite>
+<!-- http://www.appliedselenium.com/2019/03/execute-failed-test-cases-in-selenium-using-testng/ -->

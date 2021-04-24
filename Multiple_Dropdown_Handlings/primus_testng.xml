@@ -1,0 +1,9 @@
+<suite name="PrimusBank Suite">
+	<parameter name="url" value="http://primusbank.qedgetech.com"/>
+	<test name="PrimusBank TestCase">
+	<parameter name="item" value="mehidipatnam"/>
+		<classes>
+			<class name="dropdown.test.PrimusBank_Dropdown_Select"/>
+		</classes>
+	</test>
+</suite>

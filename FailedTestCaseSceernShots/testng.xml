@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Fail Screenshot">
+
+<listeners>
+        <listener class-name="onTestFailScreenShot.ScreenShotListener" />
+    </listeners>
+
+    <test name="fail_screenshot">
+        <classes>
+            <class name="onTestFailScreenShot.FirstTest">
+
+            </class>
+        </classes>
+    </test>
+
+</suite>
+<!-- http://www.appliedselenium.com/2019/03/take-screenshot-of-failed-test-cases-using-selenium/ -->

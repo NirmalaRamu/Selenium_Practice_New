@@ -1,0 +1,11 @@
+<suite name="Facebook Suite">
+	<parameter name="url" value="http:facebook.com"/>
+	<test name="Facebook TestCase">
+	<parameter name="day" value="28"/>
+	<parameter name="month" value="Nov"/>
+	<parameter name="year" value="2020"/>
+		<classes>
+			<class name="dropdown.test.Facebook_Dropdown_Select"/>
+		</classes>
+	</test>
+</suite>
