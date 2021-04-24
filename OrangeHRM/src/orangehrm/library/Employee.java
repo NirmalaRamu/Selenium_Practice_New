@@ -11,7 +11,7 @@ import utils.AppUtils;
 
 public class Employee extends AppUtils{
 
-	public String empid,empfname,emplname,empfullname,emppassword;
+	public String empid,empfname,emplname,empfullname,emppassword,empusername;
 	
 	public void addEmp(String fname,String lname,String photo) throws InterruptedException {
 		
@@ -49,10 +49,8 @@ public class Employee extends AppUtils{
 		driver.findElement(By.id("personal_txtEmpLastName")).sendKeys(lname);
 		emplname = driver.findElement(By.id("personal_txtEmpLastName")).getAttribute("value");
 		driver.findElement(By.id("personal_txtLicExpDate")).click();
-		//System.out.println(empfname);
-		//System.out.println(emplname);
 		empfullname = empfname+" "+emplname;
-		//System.out.println(empfullname);
+		
 		// Code for License Expiry date
 		Select monthlist,yearlist;
 		
@@ -99,7 +97,7 @@ public class Employee extends AppUtils{
 		driver.findElement(By.xpath("//form/fieldset/p/input")).click();
 	}
 	
-	public void adminCreateUser(String password,String conformpassword) throws InterruptedException
+	public void adminCreateUser(String username,String password) throws InterruptedException
 	{
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(By.id("menu_admin_viewAdminModule"))).build().perform();
@@ -110,25 +108,46 @@ public class Employee extends AppUtils{
 		Thread.sleep(2000);
 		driver.findElement(By.id("btnAdd")).click();
 		Thread.sleep(2000);
-		
-		driver.findElement(By.id("systemUser_employeeName_empName")).sendKeys(empfullname);
-		WebElement dropdown = driver.findElement(By.className("ac_results"));
-		dropdown.click();
-		
+		driver.findElement(By.id("systemUser_employeeName_empName")).sendKeys(empfullname);		
 		Thread.sleep(2000);
-		driver.findElement(By.id("systemUser_userName")).sendKeys(empfname);
+		driver.findElement(By.id("systemUser_userName")).sendKeys(username);
+		empusername = driver.findElement(By.id("systemUser_userName")).getAttribute("value");
 		driver.findElement(By.id("systemUser_password")).sendKeys(password);
 		emppassword = driver.findElement(By.id("systemUser_password")).getAttribute("value");
-		driver.findElement(By.id("systemUser_confirmPassword")).sendKeys(conformpassword);
 		Thread.sleep(2000);
+		driver.findElement(By.id("systemUser_confirmPassword")).sendKeys(password);
+		Thread.sleep(5000);
 		driver.findElement(By.id("btnSave")).click();
 	}
 	
-	public void emplogin()
+	public boolean searchUser() throws InterruptedException
 	{
-		driver.findElement(By.id("txtUsername")).sendKeys(empfname);
+		driver.findElement(By.id("searchSystemUser_userName")).sendKeys(empusername);
+		driver.findElement(By.className("searchbutton")).click();
+		Thread.sleep(5000);
+		WebElement result = driver.findElement(By.id("resultTable"));
+		List<WebElement> rows = result.findElements(By.tagName("tr"));
+		List<WebElement> cols = rows.get(1).findElements(By.tagName("td"));
+		if(cols.get(1).getText().equalsIgnoreCase(empusername))
+		{
+			return true;
+		}else{
+			return false;
+		}
+		
+	}
+	public boolean emplogin()
+	{
+		driver.findElement(By.id("txtUsername")).sendKeys(empusername);
 		driver.findElement(By.id("txtPassword")).sendKeys(emppassword);
 		driver.findElement(By.id("btnLogin")).click();
+		try {
+			driver.findElement(By.linkText("Admin")).isDisplayed();
+			return false;
+		} catch (Exception e) {
+			return true;
+		}
+		
 	}
 	
 	public void emplogout()

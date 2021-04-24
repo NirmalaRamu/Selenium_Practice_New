@@ -16,9 +16,11 @@ public class EmployeeTest extends AppUtils{
 		Employee emp = new Employee();
 		emp.addEmp("Qedge", "Suresh Babu", "G:\\Kids\\0.jpg");
 		Thread.sleep(2000);
-		emp.editemp("Nirmala", "Mattapalli", "28", "May", "1978", "Female", "Married");
+		emp.editemp("Ramu", "Mattapalli", "28", "May", "1978", "Female", "Married");
 		Thread.sleep(2000);
-		emp.adminCreateUser("Qedge123!@#", "Qedge123!@#");
+		emp.adminCreateUser("RamuNirmala", "Qedge123!@#");
+		Thread.sleep(2000);
+		emp.searchUser();
 		Thread.sleep(2000);
 		
 		login.adminLogout();
@@ -45,7 +47,8 @@ public class EmployeeTest extends AppUtils{
 		//login.adminLogout();
 		
 		//closeApp();
-*/		
+		*/		
+		closeApp();
 	}
 
 }

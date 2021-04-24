@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="F:/Qedge Suresh Babu/Selenium Jars/commons-io-2.8.0/commons-io-2.8.0-tests.jar"/>
 	<classpathentry kind="lib" path="F:/Qedge Suresh Babu/Selenium Jars/commons-io-2.8.0/commons-io-2.8.0-test-sources.jar"/>
 	<classpathentry kind="lib" path="F:/Qedge Suresh Babu/Selenium Jars/Sikulix api jars/bridj-0.6.2.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
