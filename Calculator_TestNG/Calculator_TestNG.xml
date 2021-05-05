@@ -1,0 +1,23 @@
+<suite name="Calculator Operations Test Suite">
+	<parameter name="url" value="http://calc.qedgetech.com"/>
+	<test name="Addition TestCase">
+		<classes>
+			<class name="calculator.tests.AdditionTest"/>
+		</classes>
+	</test>
+	<test name="Subtraction TestCase">
+		<classes>
+			<class name="calculator.tests.SubtractionTest"/>
+		</classes>
+	</test>
+	<test name="Multiplication TestCase">
+		<classes>
+			<class name="calculator.tests.MultiplicationTest"/>
+		</classes>
+	</test>
+	<test name="Division TestCase">
+		<classes>
+			<class name="calculator.tests.DivisionTest"/>
+		</classes>
+	</test>
+</suite>
