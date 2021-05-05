@@ -15,16 +15,16 @@ public class AdminLoginTestwithInvalidData extends AppUtils
 	@Test
 	public void checkAdminLogin() throws IOException, InterruptedException
 	{
-		String datafile = "F:\\Mars_Eclipse\\OrangeHRMTestNGDDT\\OrangeHRMTestXLFiles\\TestData1.xlsx";
+		String datafile = "C:\\Users\\NIRMALA\\git\\Selenium_Practice_New\\OrangeHRMTestNGDDT\\OrangeHRMTestXLFiles\\TestData1.xlsx";
 		String datasheet = "AdminLoginInvalidData";
-		String uname,upass;
+		String aname,apass;
 		
 		AdminLogin al = new AdminLogin();
 		int rowcount = XLUtils.getRowCount(datafile, datasheet);
 		for (int i=1;i<=rowcount;i++) {
-			uname = XLUtils.getStringCellData(datafile, datasheet, i, 0);
-			upass = XLUtils.getStringCellData(datafile, datasheet, i, 1);
-			boolean res = al.adminLoginforInvalidData(uname, upass);
+			aname = XLUtils.getStringCellData(datafile, datasheet, i, 0);
+			apass = XLUtils.getStringCellData(datafile, datasheet, i, 1);
+			boolean res = al.adminLoginforInvalidData(aname, apass);
 			Assert.assertTrue(res);
 			if(res)
 			{

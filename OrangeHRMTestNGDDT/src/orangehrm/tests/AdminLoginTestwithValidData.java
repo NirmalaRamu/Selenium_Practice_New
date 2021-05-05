@@ -14,7 +14,7 @@ public class AdminLoginTestwithValidData extends AppUtils
 	@Test
 	public void checkAdminLogin() throws IOException
 	{
-		String datafile = "F:\\Mars_Eclipse\\OrangeHRMTestNGDDT\\OrangeHRMTestXLFiles\\TestData1.xlsx";
+		String datafile = "C:\\Users\\NIRMALA\\git\\Selenium_Practice_New\\OrangeHRMTestNGDDT\\OrangeHRMTestXLFiles\\TestData1.xlsx";
 		String datasheet = "AdminLoginValidData";
 		String uname,upass;
 		
@@ -34,7 +34,7 @@ public class AdminLoginTestwithValidData extends AppUtils
 				XLUtils.setCellData(datafile, datasheet, i, 2, "Fail");
 				XLUtils.fillRedColor(datafile, datasheet, i, 2);
 			}
-			al.adminLogout();
+			//al.adminLogout();
 		}
 	}
 }
